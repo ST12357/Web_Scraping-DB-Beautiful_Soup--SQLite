@@ -20,18 +20,30 @@ class StartechLaptopsSpider(scrapy.Spider):
 
         Product_Name = response.xpath(
             '//h4[@class="p-item-name"]/a/text()').extract()
-            
+
         Product_Categotry = response.xpath(
             '//h6[@class="page-heading m-hide"]/text()').extract()*len(Product_Name)
 
-        Product_Description = [li.xpath('string(.)').extract(
-        )[0] for li in response.xpath('//div[@class="short-description"]/ul/li')]
+        Product_Description = []
+        for i in range(len(Product_Name)):
+            new_des = str(response.xpath(
+                '//div[@class="short-description"]/ul').extract()[i])
+            new_des = new_des.replace("\r", ",")
+            new_des = new_des.replace("<li>", "")
+            new_des = new_des.replace("</li>", "")
+            new_des = new_des.replace("<ul>", "")
+            new_des = new_des.replace("</ul>", "")
+            Product_Description.append(new_des)
 
         Product_Price = response.xpath(
             '//div[@class="p-item-price"]/span/text()').extract()
 
-        Product_Availability = response.xpath(
-            '//span[@class="st-btn stock-status"]/text()').extract()
+        Product_Availability = []
+        for i in range(len(Product_Name)):
+            new_ava = str(response.xpath(
+                '//div[@class="actions"]/span/text()').extract()[i])
+            new_ava = new_ava.replace("Add to Compare", "")
+            Product_Availability.append(new_ava)
 
         Product_URL = response.xpath(
             '//h4[@class="p-item-name"]/a/@href').extract()
