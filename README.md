@@ -1,4 +1,7 @@
 # Web_Scraping-Scrapy-Startechbd
-Scraped All Laptops and Desktop data from Startech Bangladesh website (https://www.startech.com.bd/) using scrapy.
-Data is saved in the same folder as a .csv file.
-To run open terminal in the same folder and run 'scrapy crawl startech_laptops'.
+
+All the laptops and desktop datas from the website of Startech Bangladesh (https://www.startech.com.bd/) are scraped and put into a .csv using scrapy. Built from scratch.
+   
+To run first install scrapy using 'pip install scrapy'.
+
+Download and extract this folder, open a terminal in this folder and run 'scrapy crawl startech_laptops' in the terminal.
