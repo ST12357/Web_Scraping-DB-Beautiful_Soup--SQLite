@@ -1,6 +1,6 @@
 # Web_Scraping-Scrapy-Startechbd
 
-All the laptops and desktops data from the website of Startech Bangladesh (https://www.startech.com.bd/) are scraped and put into a .csv using scrapy. Built from scratch.
+Every laptop and desktop data from the website of Startech Bangladesh (https://www.startech.com.bd/) is scraped and stored into a .csv fileusing scrapy. Built from scratch.
    
 To run first install scrapy using 'pip install scrapy'.
 
