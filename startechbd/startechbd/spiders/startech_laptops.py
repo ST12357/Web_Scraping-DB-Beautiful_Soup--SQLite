@@ -31,7 +31,7 @@ class StartechLaptopsSpider(scrapy.Spider):
             '//div[@class="p-item-price"]/span/text()').extract()
 
         Product_Availability = response.xpath(
-            '//div[@class="actions"]/span/text()').extract()
+            '//span[@class="st-btn stock-status"]/text()').extract()
 
         Product_URL = response.xpath(
             '//h4[@class="p-item-name"]/a/@href').extract()
